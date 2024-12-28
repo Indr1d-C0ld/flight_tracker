@@ -51,6 +51,27 @@ Assicurati che la stampante "Canon" sia disponibile e funzionante eseguendo un t
 
 3.3. Preparazione del Database SQLite
 
+Modifica il file db.py con i propri dati: indirizzo IP della sessione tar1090 remota e percorso del relativo file JSON, assieme a dove verrà salvato il database localmente:
+
+TAR1090_URL = "http://192.168.178.30/tar1090/data/aircraft.json"  # URL del JSON di tar1090
+DB_PATH = "/home/pi/data.db"  # Percorso locale al database remoto
+
+Per eseguire manualmente:
+
+python3 db.py
+
+Assicurati che TAR1090 sia attivo e accessibile.
+
+Automatizza il processo - Per raccogliere dati a intervalli regolari, aggiungi una riga a crontab:
+
+crontab -e
+
+Aggiungi:
+
+*/5 * * * * /usr/bin/python3 /path/to/db.py
+
+Questo eseguirà lo script ogni 5 minuti, aggiornando il database e raccogliendo dati regolarmente.
+
 Assicurati che il database SQLite (data.db) sia presente nel percorso /home/pi/data.db. Se non esiste, crealo e popola la tabella flights con i dati appropriati.
 
 sqlite3 /home/pi/data.db <<EOF
@@ -70,7 +91,7 @@ EOF
 
 Rendi eseguibile lo script:
 
-chmod +x flight_tracker.sh
+chmod +x query.sh
 
 ### 4. Funzionalità ###
 
