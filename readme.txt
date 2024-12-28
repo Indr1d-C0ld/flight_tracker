@@ -1,6 +1,6 @@
 ### 1. Panoramica ###
 
-Strumento basato su shell script progettato per monitorare e gestire informazioni sui voli, provenienti da stazione ricevente tar1090 remota. Utilizzando un database SQLite con i dati acquisiti, il programma consente di eseguire ricerche specifiche, filtrare dati per data, visualizzare classifiche, monitorare voli a terra e voli con squawk di emergenza, nonché isolare voli militari. Inoltre, offre la possibilità di stampare direttamente i risultati su una stampante di rete configurata tramite CUPS o salvare i dati in file per un'analisi successiva.
+Strumento basato su shell script progettato per monitorare e gestire informazioni sui voli, provenienti da stazione ricevente tar1090 remota e raccolti su database locale. Utilizzando un database SQLite con i dati acquisiti, il programma consente di eseguire ricerche specifiche, filtrare dati per data, visualizzare classifiche, monitorare voli a terra e voli con squawk di emergenza, nonché isolare voli militari. Inoltre, offre la possibilità di stampare direttamente i risultati su una stampante di rete configurata tramite CUPS o salvare i dati in file per un'analisi successiva.
 
 ### 2. Requisiti di Sistema ###
 
