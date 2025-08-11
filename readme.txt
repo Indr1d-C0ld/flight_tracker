@@ -1,3 +1,32 @@
+### AGGIORNAMENTO 11.08.2025 ###
+
+Integrazione dello script "Rare Aircraft Notifier":
+
+Questo script (post_rare_flights.py) automatizza il filtraggio dal database ADS-B locale dei contatti più rari, in base alla loro frequenza di avvistamento, risalenti al giorno prima.
+Si integra con Telegram per inviare notifiche automatiche ogni notte con i contatti più interessanti.
+
+Funzionalità principali:
+
+    - Selezione mirata: vengono notificati solo i velivoli con livello di rarità alto, ovvero con contatore seen compreso tra 3 e 1.
+    - Invio su Telegram: messaggi automatici a un canale o chat
+    - Automazione: pensato per essere eseguito in automatico via cron (di default ogni notte alle 00:05).
+    - Configurazione semplice tramite file config.json (token e chat ID di Telegram, percorso DB, ecc.).
+    - Utilizza i files di referenza già esistenti callsign_patterns.txt e hex_prefixes.txt, per restringere la ricerca
+
+Requisiti:
+
+    - Python 3.x
+
+    - pip install requests beautifulsoup4 (oppure sudo apt install python3-bs4)
+
+    
+Esecuzione automatica:
+
+Aggiungere al crontab:
+
+5 0 * * * /usr/bin/python3 /percorso/rare_aircraft_notifier.py
+
+
 ### Presentazione ###
 
 flight_tracker è un progetto di raccolta e consultazione di contatti ADS-B, pensato per girare su un 
@@ -169,6 +198,34 @@ flight_tracker fornisce un sistema completo di:
 -----------------------------------------------------------------------------------------------------------
 
 ### ENGLISH: ###
+
+### UPDATE 11.08.2025 ###
+
+Integration of the "Rare Aircraft Notifier" script:
+
+This script (post_rare_flights.py) automates filtering the rarest contacts from the local ADS-B database, based on their sighting frequency, dating back to the previous day.
+It integrates with Telegram to send automatic notifications every night with the most interesting contacts.
+
+Main features:
+
+- Targeted selection: Only aircraft with a high rarity level, i.e., a seen count between 3 and 1, are notified.
+- Send to Telegram: Automatic messages to a channel or chat.
+- Automation: Designed to run automatically via cron (by default, every night at 00:05).
+- Simple configuration via config.json file (Telegram token and chat ID, DB path, etc.).
+- Use the existing reference files, callsign_patterns.txt and hex_prefixes.txt, to narrow your search.
+
+Requirements:
+
+- Python 3.x
+
+- pip install requests beautifulsoup4 (or sudo apt install python3-bs4)
+
+Automatic execution:
+
+Add to crontab:
+
+5 0 * * * /usr/bin/python3 /path/rare_aircraft_notifier.py
+
 
 ### Presentation ###
 
