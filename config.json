@@ -1,0 +1,5 @@
+{
+  "db_path": "/home/pi/flight_tracker/adsb.db",
+  "telegram_token": "XXX",
+  "telegram_chat_id": "YYY"
+}
